@@ -1,0 +1,63 @@
+.cell {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2px;
+  min-width: 84px;
+  padding: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.focused {
+  background: var(--color-primary-light);
+}
+
+.input {
+  width: 100%;
+  padding: 3px 4px;
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  font-size: var(--font-size-xs);
+  text-align: center;
+  transition: border-color var(--transition-fast);
+}
+
+.input::placeholder {
+  color: var(--color-gray-300);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.points {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+  border-radius: var(--radius-sm);
+  padding: 1px 0;
+  min-width: 100%;
+  color: var(--score-low);
+}
+
+.scoreGold {
+  background: var(--score-gold-bg);
+  color: var(--color-gold);
+}
+
+.scoreSilver {
+  background: var(--score-silver-bg);
+  color: var(--color-gray-600);
+}
+
+.scoreBronze {
+  background: var(--score-bronze-bg);
+  color: var(--color-bronze);
+}
+
+.scoreLow {
+  background: var(--color-gray-100);
+  color: var(--color-gray-500);
+}

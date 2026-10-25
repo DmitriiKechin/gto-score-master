@@ -1,0 +1,209 @@
+.gridWrap {
+  overflow: auto;
+  max-width: 100%;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+}
+
+.grid {
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: max-content;
+  font-size: var(--font-size-xs);
+}
+
+.headCell {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: var(--color-gray-50);
+  border-bottom: 1px solid var(--color-gray-200);
+  border-right: 1px solid var(--color-gray-100);
+  padding: var(--spacing-sm) var(--spacing-sm);
+  text-align: left;
+  color: var(--color-gray-600);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+.headCell:last-child {
+  border-right: none;
+}
+
+.headName {
+  display: block;
+}
+
+.headUnit {
+  display: block;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-gray-400);
+  font-size: var(--font-size-xs);
+}
+
+.cell {
+  padding: var(--spacing-xs);
+  border-bottom: 1px solid var(--color-gray-100);
+  border-right: 1px solid var(--color-gray-100);
+  vertical-align: middle;
+}
+
+.corner {
+  position: sticky;
+  left: 0;
+  z-index: 4;
+  background: var(--color-gray-50);
+  min-width: 96px;
+}
+
+.stickyLeft2 {
+  position: sticky;
+  left: 96px;
+  z-index: 4;
+  background: var(--color-white);
+  min-width: 200px;
+  max-width: 240px;
+}
+
+.stickyRight {
+  position: sticky;
+  right: 0;
+  z-index: 3;
+  background: var(--color-gray-50);
+  min-width: 64px;
+  font-weight: var(--font-weight-bold);
+}
+
+.stickyRight2 {
+  position: sticky;
+  right: 64px;
+  z-index: 3;
+  background: var(--color-white);
+  min-width: 52px;
+}
+
+.stickyRight3 {
+  position: sticky;
+  right: 116px;
+  z-index: 3;
+  background: var(--color-white);
+  min-width: 68px;
+}
+
+.rowActions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.bib {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  min-width: 22px;
+  display: inline-block;
+  text-align: center;
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  border-radius: var(--radius-sm);
+  color: var(--color-gray-400);
+  opacity: 0;
+  transition:
+    opacity var(--transition-fast),
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+tr:hover .actionBtn {
+  opacity: 1;
+}
+
+.actionBtn:hover {
+  background: var(--color-gray-200);
+  color: var(--color-gray-700);
+}
+
+.actionBtn[title*='Удалить']:hover {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+  max-width: 100%;
+}
+
+.personName {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-900);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.personMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-500);
+  flex-wrap: wrap;
+}
+
+.genderTag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 10px;
+  font-weight: var(--font-weight-bold);
+}
+
+.editBtn {
+  margin-left: var(--spacing-sm);
+  color: var(--color-gray-400);
+  opacity: 0;
+  transition:
+    opacity var(--transition-fast),
+    color var(--transition-fast);
+}
+
+tr:hover .editBtn {
+  opacity: 1;
+}
+
+.editBtn:hover {
+  color: var(--color-primary);
+}
+
+.total {
+  color: var(--color-gray-900);
+}
+
+.place {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.alt {
+  background: var(--color-gray-50);
+}
+
+.alt .stickyLeft2,
+.alt .stickyRight2,
+.alt .stickyRight3 {
+  background: var(--color-gray-50);
+}

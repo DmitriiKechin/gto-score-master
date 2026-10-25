@@ -1,0 +1,32 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 2px var(--spacing-sm);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+.gold {
+  background: var(--color-gold-light);
+  color: var(--color-gold);
+  border: 1px solid #f0d28a;
+}
+
+.silver {
+  background: var(--color-silver-light);
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+}
+
+.bronze {
+  background: var(--color-bronze-light);
+  color: var(--color-bronze);
+  border: 1px solid #e2b48a;
+}
+
+.none {
+  color: var(--color-gray-400);
+}

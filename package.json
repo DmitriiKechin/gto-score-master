@@ -1,0 +1,38 @@
+{
+  "name": "gto-score-master",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "GTO Score Master — веб-калькулятор и генератор протоколов ВФСК ГТО",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "biome check src",
+    "format": "biome check --write src",
+    "typecheck": "tsc -b --noEmit",
+    "test:score": "tsx scripts/smokeScore.ts",
+    "test:pdf": "tsx scripts/smokePdf.ts"
+  },
+  "dependencies": {
+    "docx": "^9.14.0",
+    "jspdf": "^4.2.1",
+    "jspdf-autotable": "^5.0.9",
+    "lucide-react": "^1.61.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "zod": "^4.6.7",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.2",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.4",
+    "vite-node": "^6.0.0"
+  }
+}
