@@ -3,6 +3,7 @@ import { FileDown, FileText, Loader2, Settings2 } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { DEFAULT_DISCIPLINES } from '../../data/defaultDisciplines';
 import { useCompetitionStore, useComputedEventData } from '../../store/useCompetitionStore';
+import { docxFilename, downloadDocxBlob, generateProtocolDocxBlob } from '../../utils/docxGenerator';
 import { exportParticipantsCsv } from '../../utils/fileIo';
 import {
   downloadProtocol,
@@ -11,7 +12,6 @@ import {
   protocolFilename,
   protocolPreviewUrl,
 } from '../../utils/pdfGenerator';
-import { docxFilename, downloadDocxBlob, generateProtocolDocxBlob } from '../../utils/docxGenerator';
 import { Button } from '../common/Button';
 import { EmptyState } from '../common/EmptyState';
 import { Select } from '../common/Select';
@@ -142,8 +142,8 @@ export function ProtocolScreen() {
           <div>
             <h2 className={styles.sectionTitle}>Экспорт официального протокола</h2>
             <p className={styles.sectionHint}>
-              Формирование протокола в форматах PDF и DOCX (A4, альбомная ориентация, кириллица, поля для подписей
-              судейской коллегии).
+              Формирование протокола в форматах PDF и DOCX (A4, альбомная ориентация, кириллица, поля для
+              подписей судейской коллегии).
             </p>
           </div>
           <div className={styles.controls}>
@@ -158,7 +158,12 @@ export function ProtocolScreen() {
             <Button variant="secondary" icon={<FileDown size={18} />} onClick={handleCsv}>
               Экспорт в CSV
             </Button>
-            <Button variant="secondary" icon={<FileDown size={18} />} loading={docxLoading} onClick={() => void handleDocx()}>
+            <Button
+              variant="secondary"
+              icon={<FileDown size={18} />}
+              loading={docxLoading}
+              onClick={() => void handleDocx()}
+            >
               Скачать DOCX
             </Button>
             <Button icon={<FileDown size={18} />} onClick={handleDownload} disabled={!pdfUrl || generating}>

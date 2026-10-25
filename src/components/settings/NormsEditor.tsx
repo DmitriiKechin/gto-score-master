@@ -205,9 +205,9 @@ export function NormsEditor() {
             <Info size={20} className={styles.missingIcon} />
             <div>
               <p className={styles.missingTitle}>
-                По испытанию «{discipline.shortName}» для ступени {formatStage(stageFilter as GtoStage)}{' '}
-                ({stageAgeRange(stageFilter as GtoStage)}), {GENDER_LABELS[genderFilter].toLowerCase()}, официальные
-                нормативы ВФСК ГТО не предусмотрены
+                По испытанию «{discipline.shortName}» для ступени {formatStage(stageFilter as GtoStage)} (
+                {stageAgeRange(stageFilter as GtoStage)}), {GENDER_LABELS[genderFilter].toLowerCase()},
+                официальные нормативы ВФСК ГТО не предусмотрены
               </p>
               <p className={styles.missingText}>
                 Испытание не входит в официальный перечень комплекса ГТО для данной возрастной группы, поэтому

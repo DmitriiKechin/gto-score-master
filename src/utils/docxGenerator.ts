@@ -13,8 +13,14 @@ import {
   WidthType,
 } from 'docx';
 import type { Discipline, GtoStage, Participant } from '../types/competition';
-import { formatCompactResult, formatDateRange, GENDER_SHORT_LABELS, formatStage, shortFullName } from './formatters';
 import { badgeLabel } from './fileIo';
+import {
+  formatCompactResult,
+  formatDateRange,
+  formatStage,
+  GENDER_SHORT_LABELS,
+  shortFullName,
+} from './formatters';
 import type { ProtocolMode } from './pdfGenerator';
 
 type ComputedEvent = {
@@ -181,7 +187,10 @@ export async function generateProtocolDocxBlob(
       children: [new TextRun({ text: event.title, bold: true, size: 24 })],
     }),
   );
-  const meta = [event.location ? `Место проведения: ${event.location}` : '', event.date ? `Дата: ${formatDateRange(event.date, event.endDate)}` : '']
+  const meta = [
+    event.location ? `Место проведения: ${event.location}` : '',
+    event.date ? `Дата: ${formatDateRange(event.date, event.endDate)}` : '',
+  ]
     .filter(Boolean)
     .join('    ·    ');
   children.push(
@@ -204,7 +213,10 @@ export async function generateProtocolDocxBlob(
       groups.set(key, list);
     }
   } else {
-    groups.set('all', [...event.participants].sort((a, b) => (a.rank ?? 9999) - (b.rank ?? 9999)));
+    groups.set(
+      'all',
+      [...event.participants].sort((a, b) => (a.rank ?? 9999) - (b.rank ?? 9999)),
+    );
   }
 
   const chunks = chunkDisciplines(disciplines, 8);
